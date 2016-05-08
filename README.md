@@ -38,6 +38,5 @@ mysql_secure_installation
 apt-get install git
 
 # Clone this repository #
-
-
+git clone https://github.com/abrahamrhoffman/bnn-sinewave-example.git
 ```
