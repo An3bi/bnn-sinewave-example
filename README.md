@@ -1,5 +1,5 @@
 # Biological Neural Network: Sine Wave Example
-A Demo of the Biological Neural Network from Nupic. The examples demonstrates swarming (best algorithm selection), look ahead prediction and anomaly detection on a sine wave. 
+A Demo of the Biological Neural Network from Nupic. This example demonstrates swarming (best algorithm selection), look ahead prediction and anomaly detection on a sine wave. 
 
 <h2>Environment Setup</h2>
 Setup instructions for Ubuntu 14.04
