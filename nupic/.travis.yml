@@ -1,0 +1,33 @@
+branches:
+  except:
+    - gh-pages
+language: python
+compiler:
+  - gcc
+python:
+  - "2.6"
+env:
+  global:
+    - NUPIC=$TRAVIS_BUILD_DIR
+    - NTA=$HOME/nta/eng
+
+notifications:
+  irc: 
+    channels: 
+      - "irc.freenode.net#nupic"
+  webhooks: http://issues.numenta.org:8081/travis
+
+before_install:
+  - "source $NUPIC/env.sh"
+
+install: "$NUPIC/build.sh"
+
+script: 
+  # legacy binary tests
+  - "$NTA/bin/htmtest"
+  # (not quite everything, really)
+  - "$NTA/bin/testeverything"
+  # actual unit tests
+  - "$NUPIC/run_tests.sh"
+  # run sample application
+  - "python $NUPIC/examples/opf/bin/OpfRunExperiment.py $NUPIC/examples/opf/experiments/multistep/hotgym/"
